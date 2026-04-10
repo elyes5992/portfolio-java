@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #12121c;
+  --card-bg-color: rgba(30, 30, 48, 0.5);
+  --border-color: rgba(68, 68, 102, 0.8);
+  --primary-text-color: #f0f0f5;
+  --secondary-text-color: #a0a0c0;
+  --accent-color: #6c5ce7;
+  --glow-color: rgba(108, 92, 231, 0.5);
+  --tech-tag-bg: rgba(68, 68, 102, 0.4);
+}
+
+body {
+  background: radial-gradient(ellipse 50% 60% at 50% 0%, rgba(108, 92, 231, 0.2) 0%, transparent 100%) no-repeat, var(--bg-color);
+  color: var(--primary-text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 40px 15px;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.portfolio-container { max-width: 1200px; margin: 0 auto; }
+
+section { scroll-margin-top: 120px; margin-bottom: 160px; padding: 20px 0; }
+
+/* Headers de Section */
+.portfolio-header { text-align: center; margin-bottom: 80px; position: relative; }
+.portfolio-header h1 { font-size: 3.2rem; background: linear-gradient(to right, #fff, var(--accent-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
+.portfolio-header::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-color); margin: 20px auto 0; border-radius: 2px; box-shadow: 0 0 15px var(--glow-color); }
+
+/* Main Header & Navigation */
+.main-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(18, 18, 28, 0.8); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+.header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo-name { font-size: 1.8rem; font-weight: 800; color: var(--accent-color); letter-spacing: -1px; }
+.top-nav { display: flex; gap: 30px; }
+.top-nav a { color: var(--secondary-text-color); text-decoration: none; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; padding: 8px 15px; border-radius: 8px; }
+.top-nav a svg { font-size: 1.1rem; }
+.top-nav a:hover { color: var(--primary-text-color); background: rgba(108, 92, 231, 0.1); transform: translateY(-2px); }
+.top-nav a:active { color: var(--accent-color); }
+
+@media (max-width: 768px) {
+  .portfolio-header h1 { font-size: 2.5rem; }
+  .top-nav span { display: none; }
+  .top-nav { gap: 15px; }
+  .header-content { justify-content: center; flex-direction: column; gap: 10px; }
+}

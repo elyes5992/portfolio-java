@@ -1,0 +1,183 @@
+.about-skills-section {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 120px;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.about-skills-section h3 {
+  font-size: 1.8rem;
+  color: var(--primary-text-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.about-column p { color: var(--secondary-text-color); line-height: 1.7; }
+
+.skill-category { margin-bottom: 15px; }
+.skill-category h4 { font-size: 1rem; font-weight: 600; color: var(--accent-color); margin-bottom: 10px; }
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.skill-tag {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover { color: var(--primary-text-color); border-color: var(--accent-color); transform: translateY(-2px); }
+
+.skill-tag.highlight {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
+}
+
+.skill-tag.highlight:hover { box-shadow: 0 0 15px var(--glow-color); }
+
+@media (max-width: 900px) {
+  .about-skills-section { grid-template-columns: 1fr; gap: 50px; margin-bottom: 80px; }
+}
+
+
+/* Styles pour la section Expérience/Parcours */
+.experience-section {
+  padding: 80px 10%;
+  background-color: transparent;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  padding-left: 30px;
+}
+
+/* Ligne verticale de la timeline */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #6366f1, #a855f7); /* Dégradé violet/indigo */
+  opacity: 0.3;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -42px; /* Centré sur la ligne */
+  top: 0;
+  background: #1a1a2e; /* Fond sombre pour l'icône */
+  border: 2px solid #6366f1;
+  color: #6366f1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.timeline-header h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.timeline-date {
+  color: #a855f7;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-company {
+  color: #6366f1;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.timeline-location {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.timeline-content p {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.experience-tag {
+  background: rgba(99, 102, 241, 0.1);
+  color: #818cf8;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .timeline-location {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
